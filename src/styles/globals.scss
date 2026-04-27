@@ -1,20 +1,9 @@
 @use "./reset";
+@use "./typography.scss";
 @use "./variables" as *;
 @use "./mixins" as *;
 
 body {
-    background: $color-bg;
-    color: $color-text-light;
-    font-family: $font-secondary;
-}
-
-h1,
-h2,
-h3 {
-    font-family: $font-primary;
-    color: $color-text;
-}
-
-.section-alt {
-    background: $color-bg-alt;
+    background: $color-bg-l1;
+    color: $color-text-d2;
 }

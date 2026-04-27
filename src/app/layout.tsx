@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Serif, Plus_Jakarta_Sans } from "next/font/google";
 import "@/styles/globals.scss";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import Container from "@/components/layout/Container/Container";
 
-const geistSans = Geist({
-    variable: "--font-primary",
+const notoSerif = Noto_Serif({
     subsets: ["latin"],
+    weight: ["400", "700"],
+    style: ["normal", "italic"],
+    variable: "--font-noto-serif",
     display: "swap",
 });
 
-const geistMono = Geist_Mono({
-    variable: "--font-secondary",
+const plusJakarta = Plus_Jakarta_Sans({
     subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700"],
+    variable: "--font-plus-jakarta",
     display: "swap",
 });
 
@@ -32,7 +35,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="it">
-            <body className={`${geistSans.variable} ${geistMono.variable}`}>
+            <body className={`${notoSerif.variable} ${plusJakarta.variable}`}>
                 <Header />
                 <main>
                     <Container>{children}</Container>

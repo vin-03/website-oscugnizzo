@@ -1,18 +1,22 @@
 // COLORS
-$color-accent: #2563eb;
+$color-accent: #9b3f1c;
+$color-whatsapp: #25d366;
 
-$color-text: #111111;
-$color-text-light: #666666;
+$color-text-d1: #111827;
+$color-text-d2: #4b5563;
+$color-text-d3: #374151;
+$color-text-l1: #ffffff;
+$color-text-l2: #d1d5db;
+$color-text-l3: #9ca3af;
 
-$color-bg: #ffffff;
-$color-bg-alt: #f7f7f7;
-$color-bg-header: #f7f9fbe6;
-$color-bg-header-noblur: #f7f9fb;
+$color-bg-l1: #ffffff;
+$color-bg-l2: #f7f7f7;
+$color-bg-d1: #212529;
+
+$color-bg-header: #ffffffe6;
 
 $border: rgba(0, 0, 0, 0.04);
 
-$color-whatsapp: #25d366;
-
 // FONTS
-$font-primary: var(--font-primary);
-$font-secondary: var(--font-secondary);
+$font-primary: var(--font-noto-serif);
+$font-secondary: var(--font-plus-jakarta);

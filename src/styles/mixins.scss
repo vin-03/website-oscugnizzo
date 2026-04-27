@@ -1,5 +1,25 @@
+@use "./variables.scss" as *;
+
 @mixin flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+// Fonts
+
+@mixin text-body {
+    font-family: var(--font-plus-jakarta), sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+@mixin text-label {
+    font-family: var(--font-plus-jakarta), sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
 }

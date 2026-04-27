@@ -14,6 +14,9 @@
     backdrop-filter: blur(12px);
 
     transition: all 0.3s ease;
+    font-family: $font-primary;
+    border-bottom: 1px solid #f3f4f6;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
 }
 
 /* ============================================
@@ -33,7 +36,7 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.75rem;
     transition: all 0.3s ease;
 }
 
@@ -42,14 +45,16 @@
 }
 
 .logoImg {
-    width: 36px;
-    height: 36px;
+    width: 2rem;
+    height: auto;
     object-fit: contain;
 }
 
 .logoTitle {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    color: $color-text-d1;
 }
 
 @media (max-width: 768px) {
@@ -80,6 +85,12 @@
 }
 
 .navLink {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: -0.015em;
+    color: $color-text-d2;
+    font-family: $font-secondary;
+
     position: relative;
     transition: all 0.3s ease;
 
@@ -119,41 +130,41 @@
     gap: 8px;
 }
 
-// WHATSAPP BUTTON
-
-.whatsappBtn {
+// Phone BUTTON
+.phoneBtn {
     @include flex-center;
     gap: 0.5rem;
-    padding: 10px 14px;
-    background-color: $color-whatsapp;
+    background-color: $color-accent; // sostituisci con il tuo $accent-red
+    color: $color-text-l1;
+    font-family: $font-secondary;
+    padding: 0.625rem;
     border-radius: 0.75rem;
-    transition: all 0.3s ease;
-    color: white;
-    box-shadow: 0 4px 14px 0 rgba(37, 211, 102, 0.39);
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        opacity 0.2s ease;
 
-    & .text {
-        font-weight: 600;
+    &:hover {
+        opacity: 0.9;
     }
-}
 
-.whatsappBtn:hover {
-    filter: brightness(1.1);
-}
+    .text {
+        display: none;
 
-.whatsappBtn svg {
-    width: 1.5rem; /* w-6 = 24px */
-    height: 1.5rem; /* h-6 = 24px */
-    fill: currentColor; /* fill-current */
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .whatsappBtn {
-        padding: 8px;
-
-        .text {
-            display: none;
+        @media (min-width: 768px) {
+            display: inline;
         }
+    }
+
+    @media (min-width: 768px) {
+        padding: 0.625rem 1.5rem;
+    }
+
+    svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        flex-shrink: 0;
     }
 }
 
@@ -174,7 +185,7 @@
 }
 
 .burgerBtnIcon {
-    background-color: $color-text;
+    background-color: $color-text-d1;
     height: 2px;
     width: 22px;
     display: block;
@@ -185,7 +196,7 @@
 .burgerBtnIcon::before,
 .burgerBtnIcon::after {
     content: "";
-    background-color: $color-text;
+    background-color: $color-text-d1;
     display: block;
     width: 100%;
     height: 100%;
@@ -223,7 +234,7 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background: $color-bg-header-noblur;
+    background: $color-bg-l1;
 
     transition: all 0.25s ease;
     transform: translateY(-10px);
