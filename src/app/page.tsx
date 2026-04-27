@@ -1,3 +1,10 @@
+import Container from "@/components/layout/Container/Container";
+import Hero from "@/components/sections/Hero/Hero";
+
 export default function () {
-    return <h1>Ciaoooo Homeeee</h1>;
+    return (
+        <main>
+            <Hero />
+        </main>
+    );
 }
