@@ -13,9 +13,9 @@ export default function Header() {
         setIsOpen(!isOpen);
     };
 
-    const phone = "3282774412";
-    const message = "Ciao! Vorrei informazioni sulla disponibilità per stasera";
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    // const phone = "3282774412";
+    // const message = "Ciao! Vorrei informazioni sulla disponibilità per stasera";
+    // const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
     const navLinks = [
         { href: "/", label: "Home" },
@@ -48,12 +48,22 @@ export default function Header() {
                             <ul className={styles.navDesktopUl}>
                                 {navLinks.map((link) => (
                                     <li key={link.href}>
-                                        <a
+                                        <Link
                                             href={link.href}
                                             className={styles.navLink}
+                                            scroll={
+                                                link.href.includes("#") ?
+                                                    false
+                                                :   undefined
+                                            }
+                                            onClick={
+                                                link.href.includes("#") ?
+                                                    toggleMenu
+                                                :   undefined
+                                            }
                                         >
                                             {link.label}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -93,13 +103,18 @@ export default function Header() {
                         <ul className={styles.navMobileUl}>
                             {navLinks.map((link) => (
                                 <li key={link.href}>
-                                    <a
+                                    <Link
                                         href={link.href}
                                         className={styles.navLink}
                                         onClick={toggleMenu}
+                                        scroll={
+                                            link.href.includes("#") ?
+                                                false
+                                            :   undefined
+                                        }
                                     >
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
