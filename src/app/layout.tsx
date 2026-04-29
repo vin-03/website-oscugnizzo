@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer/Footer";
 
 const notoSerif = Noto_Serif({
     subsets: ["latin"],
-    weight: ["400", "700"],
+    weight: ["400", "500", "700"],
     style: ["normal", "italic"],
     variable: "--font-noto-serif",
     display: "swap",
@@ -15,6 +15,7 @@ const notoSerif = Noto_Serif({
 const plusJakarta = Plus_Jakarta_Sans({
     subsets: ["latin"],
     weight: ["300", "400", "500", "600", "700"],
+    style: ["normal", "italic"],
     variable: "--font-plus-jakarta",
     display: "swap",
 });

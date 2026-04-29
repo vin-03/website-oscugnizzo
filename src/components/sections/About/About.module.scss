@@ -1,0 +1,118 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+
+.about {
+    position: relative;
+    display: flex;
+    gap: 5rem;
+    padding: 6rem 0;
+
+    @media (max-width: 1024px) {
+        flex-direction: column-reverse;
+    }
+}
+
+.gallery,
+.content {
+    flex: 1;
+}
+
+/* ============================================
+   IMAGE COLUMN
+   ============================================ */
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.galleryMain {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: $border-rad-xl;
+
+    img {
+        object-position: center 35%;
+    }
+    &:hover img {
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+    }
+}
+
+.gallerySub {
+    display: flex;
+    gap: 1rem;
+}
+
+.galleryThumbWrapper {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: $border-rad-xl;
+
+    &:hover img {
+        transform: scale(1.05);
+    }
+}
+
+.image {
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* ============================================
+   TEXT COLUMN
+   ============================================ */
+
+.content {
+    //  max-width: 42rem;
+    display: flex;
+    flex-direction: column;
+    //  align-items: center;
+    justify-content: center;
+}
+
+.title {
+    margin: 0 0 1.5rem;
+    color: $color-text-d1;
+    font-family: $font-primary;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 1.1;
+}
+
+.titleAccent {
+    color: $color-accent;
+    font-style: italic;
+}
+
+.paragraph {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: $color-text-d2;
+    line-height: 1.75;
+
+    p {
+        margin: 0;
+        font-size: 18px;
+    }
+}
+
+.quote {
+    font-style: italic;
+    font-family: $font-primary;
+    color: $color-accent;
+    font-size: 20px !important;
+    font-weight: 400;
+}

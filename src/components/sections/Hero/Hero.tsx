@@ -1,4 +1,3 @@
-// Hero.tsx
 import Image from "next/image";
 import styles from "./Hero.module.scss";
 import Link from "next/link";
