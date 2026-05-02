@@ -51,6 +51,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="it">
+            <head>
+                <link
+                    rel="stylesheet"
+                    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+                />
+            </head>
             <body className={`${notoSerif.variable} ${plusJakarta.variable}`}>
                 <Header />
                 {children}

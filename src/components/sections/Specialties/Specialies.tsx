@@ -53,13 +53,12 @@ export default function Specialties() {
                 </div>
                 <Link href="/menu" className={styles.menuLink}>
                     Vedi tutto il Menu
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
+                    <span
+                        className="material-symbols-outlined"
                         aria-hidden="true"
                     >
-                        <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-3v2z" />
-                    </svg>
+                        arrow_right_alt
+                    </span>
                 </Link>
             </div>
 
