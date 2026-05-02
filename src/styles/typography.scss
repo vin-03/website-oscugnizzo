@@ -1,9 +1,14 @@
 @use "./mixins.scss" as *;
+@use "./variables.scss" as *;
+
+body {
+    font-family: $font-secondary, serif;
+}
 
 h1,
 h2,
 h3 {
-    font-family: var(--font-noto-serif), serif;
+    font-family: $font-primary, serif;
 }
 
 h1 {
@@ -21,8 +26,3 @@ h2 {
 p {
     @include text-body;
 }
-
-// .tag,
-// nav a {
-//     @include text-label;
-// }

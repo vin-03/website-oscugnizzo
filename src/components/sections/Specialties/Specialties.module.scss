@@ -1,0 +1,163 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+.specialties {
+    padding: 6rem $container-lat-space;
+    background: $color-bg-l2;
+
+    @media (min-width: 768px) {
+        padding: 6rem $container-lat-space-xl;
+    }
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+.headerTitleContainer {
+    display: flex;
+    justify-content: end;
+}
+
+.headerTitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.eyebrow {
+    color: $color-accent;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 36px;
+    color: $color-text-d1;
+    line-height: 1.2;
+}
+
+.menuLink {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+    color: #b91c1c;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.2s ease;
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &:hover {
+        transform: translateX(4px);
+    }
+}
+/* ============================================
+   CARDS
+   ============================================ */
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.card {
+    flex: 1;
+    background: $color-bg-l1;
+    border-radius: $border-rad-xl;
+    overflow: hidden;
+    border: 1px solid #e5e7e0;
+    display: flex;
+    flex-direction: column;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    &:hover {
+        border-color: rgba(185, 28, 28, 0.3);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+
+        .image {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.imageWrapper {
+    position: relative;
+    height: 16rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.image {
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.price {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: $color-bg-d1;
+    color: $color-text-l1;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.cardBody {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 160px;
+}
+
+.pizzaName {
+    font-size: 1.5rem;
+    color: $color-text-d1;
+    font-weight: 400;
+    margin: 0 0 0.75rem;
+    line-height: 1.3;
+}
+
+.pizzaDesc {
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.75;
+    margin: 0;
+}
