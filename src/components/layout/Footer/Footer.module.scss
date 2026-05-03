@@ -2,50 +2,277 @@
 @use "../../../styles/mixins" as *;
 
 .footer {
-    padding: 40px 0;
-    background: $color-bg-l2;
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+    color: $color-text-l2;
+    background-color: $color-bg-d1;
 }
 
-.inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
+$bg-dark: #1a1a1a;
+$text-primary: #ffffff;
+$text-secondary: #9ca3af; // gray-400
+$text-muted: #6b7280; // gray-500
+$accent-red: #dc2626; // red-600, adatta al tuo tema
+$border-subtle: rgba(255, 255, 255, 0.05);
+$border-light: rgba(255, 255, 255, 0.1);
+$transition: all 0.3s ease;
+
+.footer {
+    width: 100%;
+    padding-top: 5rem; // pt-20
+    padding-bottom: 2.5rem; // pb-10
+    background-color: $bg-dark;
+    color: $text-primary;
+    font-family:
+        system-ui,
+        -apple-system,
+        sans-serif;
 }
 
-.brand {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem; // gap-12
+    margin-bottom: 4rem; // mb-16
 
-.logo {
-    font-weight: 600;
-    font-size: 16px;
-}
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr); // md:grid-cols-2
+    }
 
-.copy {
-    font-size: 14px;
-    color: $color-text-l1;
-}
-
-.nav {
-    display: flex;
-    gap: 16px;
-
-    a {
-        transition: 0.2s;
-
-        &:hover {
-            color: $color-accent;
-        }
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr); // lg:grid-cols-4
     }
 }
 
-@media (max-width: 768px) {
-    .inner {
-        flex-direction: column;
-        align-items: flex-start;
+// Colonne generiche
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; // gap-6
+}
+
+.colTitle {
+    font-family:
+        var(--font-headline), Georgia, serif; // adatta alla tua font headline
+    font-size: 1.125rem; // text-lg
+    font-weight: 700;
+    color: $text-primary;
+    border-bottom: 1px solid rgba($accent-red, 0.3);
+    padding-bottom: 0.5rem; // pb-2
+    margin: 0;
+}
+
+// Brand Column
+.brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.brandHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem; // gap-4
+}
+
+.brandImgWrapper {
+    width: 4.5rem; // w-16
+    height: 4.5rem; // h-16
+    border-radius: 9999px;
+    background-color: $border-light;
+    overflow: hidden;
+    border: 1px solid $border-light;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.brandImg {
+    object-position: center 20%;
+    width: 2rem;
+    height: auto;
+    object-fit: cover;
+}
+
+.brandName {
+    font-family: var(--font-headline), Georgia, serif;
+    font-size: 1.5rem; // text-2xl
+    font-style: italic;
+    font-weight: 700;
+}
+
+.brandDesc {
+    color: $text-secondary;
+    font-size: 0.875rem; // text-sm
+    line-height: 1.625; // leading-relaxed
+    margin: 0;
+}
+
+// Socials
+.socials {
+    display: flex;
+    gap: 1rem; // gap-4
+    margin-top: 0.5rem; // mt-2
+}
+
+.social {
+    width: 2.5rem; // w-10
+    height: 2.5rem; // h-10
+    border-radius: 0.5rem; // rounded-lg
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $border-light;
+    border: 1px solid $border-light;
+    color: $text-primary;
+    transition: $transition;
+
+    &:hover {
+        background-color: $accent-red;
+        border-color: $accent-red;
+        color: $text-primary;
+    }
+}
+
+.icon {
+    width: 1.25rem; // w-5
+    height: 1.25rem; // h-5
+    fill: currentColor;
+}
+
+// Navigation
+.navList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; // gap-3
+}
+
+.navListUl {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem; // gap-2
+    }
+}
+
+.chevron {
+    font-family: "Material Symbols Outlined", sans-serif;
+    font-size: 0.75rem; // text-xs
+    color: $text-secondary;
+}
+
+.navLink {
+    color: $text-secondary;
+    font-size: 0.875rem; // text-sm
+    text-decoration: none;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+        color: $accent-red;
+    }
+}
+
+// Contact
+.contactList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; // gap-4
+}
+
+.contactItem {
+    display: flex;
+    align-items: flex-start; // items-start per l'indirizzo
+    gap: 0.75rem; // gap-3
+    color: $text-secondary;
+    font-size: 0.875rem; // text-sm
+
+    &:nth-child(2),
+    &:nth-child(3) {
+        align-items: center; // items-center per telefono e mail
+    }
+
+    p {
+        font-size: 14px;
+        margin: 0;
+        line-height: 1.625;
+    }
+}
+
+.contactIcon {
+    font-family: "Material Symbols Outlined", sans-serif;
+    color: $accent-red;
+    font-size: 1rem !important;
+    margin-top: 0.125rem; // mt-0.5 per allineamento
+    flex-shrink: 0;
+}
+
+.contactLink {
+    color: inherit;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+        color: $accent-red;
+    }
+}
+
+// Orari
+.orari {
+    color: $text-secondary;
+    font-size: 14px;
+    line-height: 1.625;
+
+    p {
+        margin: 0;
+        font-size: 14px; // text-sm
+    }
+}
+
+// Bottom Bar
+.bottomBar {
+    padding-top: 2rem; // pt-8
+    border-top: 1px solid $border-subtle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; // gap-4
+    font-size: 12px; // text-xs
+    color: $text-muted;
+
+    p {
+        font-size: 12px; // text-xs
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between; // md:flex-row justify-between
+    }
+}
+
+.legalLinks {
+    display: flex;
+    gap: 1.5rem; // gap-6
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+            color: $accent-red;
+        }
     }
 }

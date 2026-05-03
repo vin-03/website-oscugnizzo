@@ -5,6 +5,7 @@ import Container from "../Container/Container";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import { navLinks } from "@/lib/nav-links";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,17 +13,6 @@ export default function Header() {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-
-    // const phone = "3282774412";
-    // const message = "Ciao! Vorrei informazioni sulla disponibilità per stasera";
-    // const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-    const navLinks = [
-        { href: "/", label: "Home" },
-        { href: "/menu", label: "Menu" },
-        { href: "/#about", label: "Chi Siamo" },
-        { href: "/#contatti", label: "Contatti" },
-    ];
 
     return (
         <header className={styles.header}>
@@ -43,6 +33,7 @@ export default function Header() {
                                 O' Scugnizzo
                             </span>
                         </Link>
+
                         {/* Link nav desktop */}
                         <nav className={styles.navDesktop}>
                             <ul className={styles.navDesktopUl}>
@@ -51,16 +42,6 @@ export default function Header() {
                                         <Link
                                             href={link.href}
                                             className={styles.navLink}
-                                            scroll={
-                                                link.href.includes("#") ?
-                                                    false
-                                                :   undefined
-                                            }
-                                            onClick={
-                                                link.href.includes("#") ?
-                                                    toggleMenu
-                                                :   undefined
-                                            }
                                         >
                                             {link.label}
                                         </Link>
@@ -70,7 +51,6 @@ export default function Header() {
                         </nav>
 
                         {/* Header Btns */}
-
                         <div className={styles.headerBtns}>
                             <a
                                 href="tel:+391234567890"
@@ -96,6 +76,7 @@ export default function Header() {
                             </button>
                         </div>
                     </div>
+
                     {/* Link Nav Mobile */}
                     <nav
                         className={`${styles.navMobile} ${isOpen ? styles.open : ""}`}
@@ -107,11 +88,6 @@ export default function Header() {
                                         href={link.href}
                                         className={styles.navLink}
                                         onClick={toggleMenu}
-                                        scroll={
-                                            link.href.includes("#") ?
-                                                false
-                                            :   undefined
-                                        }
                                     >
                                         {link.label}
                                     </Link>
